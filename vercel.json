@@ -10,6 +10,7 @@
     "routes":[
         {
             "src":"/(.*)",
+            "methods": ["GET", "POST", "OPTIONS"],
             "headers": {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
@@ -17,7 +18,10 @@
               },
               "dest":"/",
               "continue": true
-        }
+        },
+        {
+            "src": "/api/storePayments", "methods": ["POST"], "dest": "index.js"
+          }
     ]
 }
 
