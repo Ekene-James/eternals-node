@@ -8,7 +8,7 @@ const cors = require("cors");
 const colors = require("colors");
 
 //bring in the router files
-const storePayments = require("./routes/storePayments");
+const storePayments = require("./api/storePayments");
 
 
 const errorHandler = require("./middleware/error");
@@ -41,7 +41,7 @@ mongoose
   .catch(err => console.log(`${err.message}`.red.bold));
 
 //mount the routers
-app.use("/api/v1/storePayments", storePayments);
+app.use("/api/storePayments", storePayments);
 
 app.use(errorHandler);
 
