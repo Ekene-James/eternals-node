@@ -1,4 +1,4 @@
-import micro from "micro-cors";
+const cors = require('micro-cors')()
 
 function MyApi(req, res) {
   if (req.method === "OPTIONS") {
@@ -7,6 +7,5 @@ function MyApi(req, res) {
   // handling other requests normally after this
 }
 
-const cors = micro();
+module.exports = cors(MyApi)
 
-export default cors(MyApi);
