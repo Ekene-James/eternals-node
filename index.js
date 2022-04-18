@@ -69,3 +69,10 @@ process.on("unhandledRejection" || "uncaughtException", (err, promise) => {
   console.log(`error : ${err.message}`);
   server.close(() => process.exit(1));
 });
+
+// "routes":[
+//     {
+//         "src":"/(.*)",
+//         "dest":"/"
+//     }
+// ],
