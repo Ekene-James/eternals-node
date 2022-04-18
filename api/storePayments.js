@@ -4,6 +4,7 @@ const {
   postPaymentDetails,
   getData
 } = require("../controller/storePayments");
+const allowCors = require("../middleware/allowCors");
 
 
 
@@ -11,6 +12,6 @@ const {
 router
   .route("/")
   .get(getData)
-  .post(postPaymentDetails);
+  .post(allowCors(),postPaymentDetails);
   
   module.exports = router;

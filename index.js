@@ -12,6 +12,7 @@ const storePayments = require("./api/storePayments");
 
 
 const errorHandler = require("./middleware/error");
+const allowCors = require("./middleware/allowCors");
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -50,6 +51,7 @@ mongoose
   //   next();
   // });
 
+  app.use(allowCors);
 //mount the routers
 app.use("/api/storePayments", storePayments);
 
