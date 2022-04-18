@@ -1,10 +1,12 @@
 const express = require("express");
+const microCors = require('micro-cors')
+const cors = microCors();
 const router = express.Router();
 const {
   postPaymentDetails,
   getData
 } = require("../controller/storePayments");
-const allowCors = require("../middleware/allowCors");
+
 
 
 
@@ -14,4 +16,4 @@ router
   .get(getData)
   .post(postPaymentDetails);
   
-  module.exports = router;
+  module.exports = cors(router);

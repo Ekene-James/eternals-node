@@ -21,19 +21,11 @@ try {
 //route     post /api/storePayments
 //access    public
 exports.postPaymentDetails = asyncHandler(async (req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-
-//---- other code
-
-//Preflight CORS handler
-  if(req.method === 'OPTIONS') {
-      return res.status(200).json(({
-          body: "OK"
-      }))
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
   }
+
+ 
  try {
 
   const storePayments = await StorePayments.create(req.body);
@@ -43,6 +35,7 @@ exports.postPaymentDetails = asyncHandler(async (req, res, next) => {
   res.status(500).json({ success: false, data: 'Server Error' });
   
 }
+
 
 });
 
