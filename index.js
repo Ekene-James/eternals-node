@@ -20,7 +20,8 @@ const app = express();
 //body parser
 app.use(express.json());
 const corsOptions ={
-  origin:"*",           //access-control-allow-credentials:true
+  origin:"*",    
+  credentials: true,       //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
