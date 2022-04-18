@@ -51,7 +51,7 @@ mongoose
   //   next();
   // });
 
-  app.use(allowCors);
+
 //mount the routers
 app.use("/api/storePayments", storePayments);
 

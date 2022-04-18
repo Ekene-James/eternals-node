@@ -12,6 +12,6 @@ const allowCors = require("../middleware/allowCors");
 router
   .route("/")
   .get(getData)
-  .post(allowCors(),postPaymentDetails);
+  .post(postPaymentDetails);
   
   module.exports = router;
