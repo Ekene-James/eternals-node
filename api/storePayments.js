@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('micro-cors')()
+
 const router = express.Router();
 const {
   postPaymentDetails,
@@ -15,4 +15,4 @@ router
   .get(getData)
   .post(postPaymentDetails);
   
-  module.exports = cors(router);
+  module.exports =router;

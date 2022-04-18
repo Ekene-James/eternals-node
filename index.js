@@ -10,6 +10,7 @@ const storePayments = require("./api/storePayments");
 
 
 const errorHandler = require("./middleware/error");
+const cors = require("./middleware/microCors");
 
 
 dotenv.config({ path: "./config/config.env" });
@@ -19,6 +20,7 @@ const app = express();
 //body parser
 app.use(express.json());
 
+app.use(cors());
 
 
 if (process.env.NODE_ENV === "development") {
