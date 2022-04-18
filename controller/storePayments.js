@@ -23,10 +23,16 @@ try {
 exports.postPaymentDetails = asyncHandler(async (req, res, next) => {
 
  // const isValidEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(req.body.email) && req.body.email.length > 0 
+ try {
 
   const storePayments = await StorePayments.create(req.body);
-
   res.status(201).json({ success: true, data: storePayments });
+  
+} catch (error) {
+  res.status(500).json({ success: false, data: 'Server Error' });
+  
+}
+
 });
 
 
