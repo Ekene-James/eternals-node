@@ -1,6 +1,5 @@
 const express = require("express");
-const microCors = require('micro-cors')
-const cors = microCors();
+const cors = require('micro-cors')()
 const router = express.Router();
 const {
   postPaymentDetails,

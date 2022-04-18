@@ -3,8 +3,6 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
-const cors = require("cors");
-
 const colors = require("colors");
 
 //bring in the router files
@@ -12,7 +10,7 @@ const storePayments = require("./api/storePayments");
 
 
 const errorHandler = require("./middleware/error");
-const allowCors = require("./middleware/allowCors");
+
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -20,12 +18,6 @@ const app = express();
 
 //body parser
 app.use(express.json());
-const corsOptions ={
-  origin:"*",    
-  credentials: true,       //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
 
 
 
